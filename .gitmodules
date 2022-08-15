@@ -1,0 +1,6 @@
+[submodule "spotify-web-api-node"]
+	path = spotify-web-api-node
+	url = https://github.com/Vlad-Makarenko/spotify-web-api-node.git
+[submodule "server/lib/spotify-web-api-node"]
+	path = server/lib/spotify-web-api-node
+	url = https://github.com/Vlad-Makarenko/spotify-web-api-node.git
