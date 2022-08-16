@@ -3,5 +3,6 @@
 
 > TODO:
 
-* get the tracks' features
+* get the tracks' characteristics
 * create a schema and render a mood board dependent on user track list.
+* 
