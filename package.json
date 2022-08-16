@@ -11,12 +11,14 @@
     "install_client": "npm i --prefix client",
     "install_spotify_web_api": "npm i --prefix /server/lib/spotify-web-api-node",
     "prepare_install": "npm run install_server && npm run install_client && npm run install_spotify_web_api"
-
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "concurrently": "^7.3.0",
+    "eslint": "^8.22.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-react": "^7.30.1",
     "nodemon": "^2.0.19"
   },
   "dependencies": {
