@@ -1,5 +1,6 @@
 import * as EmailValidator from 'email-validator';
-import jsonwebtoken from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 
 // eslint-disable-next-line valid-jsdoc
 /**
@@ -54,10 +55,15 @@ export const useRegisterRoute = (User, url = '/api/auth/register') => {
         };
       }
 
+      const hashedPassword = await bcrypt.hash(
+          password,
+          process.env.SALT || 10,
+      );
+
       const user = new User({
         username,
         email,
-        password,
+        password: hashedPassword,
       });
 
       try {
@@ -74,9 +80,12 @@ export const useRegisterRoute = (User, url = '/api/auth/register') => {
 
       const userId = user.id.toString();
 
-      const token = jsonwebtoken.sign({
-        userId,
-      }, process.env.JWT_SECRET || 'secret key');
+      const token = jwt.sign(
+          {
+            userId,
+          },
+          process.env.JWT_SECRET || 'secret key',
+      );
 
       return {
         token,
