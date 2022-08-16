@@ -6,7 +6,12 @@
   "scripts": {
     "server": "nodemon server/app.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install_server": "npm i",
+    "install_client": "npm i --prefix client",
+    "install_spotify_web_api": "npm i --prefix /server/lib/spotify-web-api-node",
+    "prepare_install": "npm run install_server && npm run install_client && npm run install_spotify_web_api"
+
   },
   "author": "",
   "license": "ISC",
